@@ -13,3 +13,31 @@
          <a href="#"> <img class="voice" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice"></a>
      </div>
 </div>
+
+<div class="topgrid">
+    <ul class="options" style="list-style: none; position: relative; left: 140px;">
+        <li><a #optionlist  class="all" style="color: grey; cursor: pointer;padding: 5px;" (click)="onClickOption('all')"><img class="mr-2" src="../../../assets/img/search.svg" />All  </a></li>
+        <li><a #optionlist class="img" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('img')"><img class="mr-2" src="../../../assets/img/image-fill.svg" />Images </a></li>
+        <li><a #optionlist  class="video" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('video')"><img class="mr-2" src="../../../assets/img/file-play.svg" />Videos </a></li>
+        <li><a #optionlist class="news" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('news')"><img class="mr-2" src="../../../assets/img/newspaper.svg" />News </a></li>
+        <li><a #optionlist class="book" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('book')"><img class="mr-2" src="../../../assets/img/journal-bookmark.svg" />Books </a></li>
+
+    </ul>
+   
+</div>
+<hr>
+
+
+<div class="search-box">
+    <div class="search-data" *ngFor="let lst of searchList">
+        <h3>{{ lst.title }}</h3> <title>{{ lst.link }}</title>
+        <span>{{ lst.snippet }}</span>
+    </div>
+</div>
+
+
+
+
+
+      
+

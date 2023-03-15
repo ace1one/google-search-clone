@@ -36,3 +36,61 @@
     border-left: 1px solid #dcdcdc;
     height: 30px;
   }
+
+  li {
+    display: inline;
+    margin-right: 25px;
+}
+
+.topgrid {
+  position: relative;
+  top: 10px;
+ // display: grid;
+  grid-template-rows: repeat(2 60px);
+  grid-template-columns: repeat(4); 
+  align-items: center;
+  grid-template-areas: 
+  "logo form apps signin"
+  ". options . .";
+}
+
+.options {
+
+  font-size: 15px;
+  color: grey;
+}
+
+.option-link{
+  padding: 5px;
+}
+
+.option{
+  border-bottom: 1px solid blue;
+  border-bottom-width: 3px;
+  padding: 5px;
+}
+
+.option-link:hover{
+  border-bottom: 1px solid blue;
+  border-bottom-width: 3px;
+  padding: 5px;
+
+}
+
+.hrz {
+  height: .25rem;
+  width:auto;
+  margin: 0;
+  background: tomato;
+  border: none;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+
+.search-box{
+  position: relative;
+  left: 170px;
+
+}
+

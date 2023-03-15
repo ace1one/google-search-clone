@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GoogleSearchService } from 'src/app/services/google-search.service';
 import { takeUntil } from "rxjs/operators";
@@ -10,10 +10,13 @@ import { Subject } from 'rxjs';
   styleUrls: ['./search-result.component.scss']
 })
 export class SearchResultComponent implements OnInit,OnDestroy {
+  @ViewChildren('optionlist') optionlist!: QueryList<SearchResultComponent>;
   searchValue:any;
   paginator:any ={ searchParam :{q:null }}
   destoryed$ = new Subject<any>();
-  constructor(private route: ActivatedRoute,private searchService:GoogleSearchService,) { }
+  constructor(private route: ActivatedRoute,private searchService:GoogleSearchService,) { 
+   // this.optionlist =  '' as QueryList<SearchResultComponent>
+  }
 
   ngOnInit(): void {
     this.getSearchValue();
@@ -29,11 +32,14 @@ export class SearchResultComponent implements OnInit,OnDestroy {
   }
 
 
+  searchList:any[]=[]
   getSearch(){
     this.searchService.getsearchData(this.paginator)
     .pipe(takeUntil(this.destoryed$))
     .subscribe(res=>{
+      const { items }:any = res.body
       console.log(res);
+      this.searchList = items
      // this.goToSearchPage()
     })
   }
@@ -42,6 +48,36 @@ export class SearchResultComponent implements OnInit,OnDestroy {
   ngOnDestroy(): void {
     this.destoryed$.next(false);
     this.destoryed$.unsubscribe()
+  }
+
+
+  isOptionClick:boolean = false;
+  onClickOption(prop:any){
+
+    // let xx = document.getElementsByClassName('a') as HTMLCollectionOf<HTMLElement>;
+    // console.log(xx);
+    
+    this.optionlist.forEach(element => {
+      const { nativeElement }:any = element
+     // console.log(nativeElement.className);
+    //  var elems  = document.querySelectorAll(nativeElement.className)
+    //  console.log(elems);
+     // console.log(document.);
+     let className = document.getElementsByClassName(nativeElement.className);
+     if(prop === nativeElement.className){
+     
+      className[0].classList.add('option')
+      console.log(className);
+      
+     //  this.optionlist.classList.add('option')
+     }else{
+      className[0].classList.remove('option')
+     }
+      
+    });
+      
+      
+   
   }
 
 }
