@@ -38,6 +38,11 @@ export class SearchComponent implements OnInit,OnDestroy {
     this.goToSearchPage()
   }
 
+  onClickTitle(titleName:string){
+    //this.router.navigate(`wwww.${titleName}.com`)
+    window.location.href = `http://${titleName}.com`;
+  }
+
 
   ngOnDestroy(): void {
     this.destoryed$.next(false);

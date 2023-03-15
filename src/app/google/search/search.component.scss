@@ -40,7 +40,7 @@
 
 
   .searchicon{
-    height: 20px;
+   // height: 20px;
     position: relative;
     left: 10px;
   }
@@ -82,13 +82,14 @@
   }
 
   .plusicon{
-    margin-left: 15px;
-    margin-top: 14px;
+    margin-left: 8px;
+    margin-top: 8px;
+    height: 25px;
   }
 
 
   .title-card{
-   
+   cursor: pointer;
     height: 95px;
     width: 120px;
     border: 1px solid white;
@@ -112,4 +113,20 @@
     margin-left: 20px;
     padding-top: 8px;
     font-size: small;
+  }
+
+  .top-bar{
+    padding: 10px;
+  }
+
+  .top-bar a{
+    font-size: 15px;
+    color: gray;
+  }
+
+  .top-bar li{
+    display: inline;
+    margin-right: 10px;
+    padding: 3px;
+    color: gray;
   }

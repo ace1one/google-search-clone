@@ -1,19 +1,33 @@
 
-<!-- <img class="logo" height="120" width="350" src="../../../assets/img/google.png" /> -->
+<div class="clearfix">
+    <div class="float-right top-bar">
+        <ul  style="list-style: none;">
+            <li><a href="#">Gmail</a></li>
+            <li><a href="#">Image</a></li>
+        </ul>
+        <div class="user-img">
+            <img src="../../../assets/img/image-fill.svg" />
+        </div>
+    </div>
+
+</div>
+
+
+
 
     <div class="logo">
         <img alt="Google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
     </div>
     
     <div class="searchbar">
-       <img  class="searchicon" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Search-icon.png"/>
+       <img  class="searchicon" src="../../../assets/img/search.svg"/>
         <input class="searchinput" (keyup.enter)="onSearch()" [(ngModel)]="searchValue" [ngModelOptions]="{ standalone: true }" type="text" title="search" placeholder="Search Google or type a URL">
         <a href="#"> <img class="voice" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice"></a>
     </div>
     
     
     <div class="d-flex title-icon">
-        <div class="title-card">
+        <div class="title-card" (click)="onClickTitle('youtube')">
             <div class="title">
                 <img class="titleimg" src="../../../assets/img/youtube.svg" height="20" width="26" />
               
@@ -23,7 +37,7 @@
             </div>
         </div>
     
-        <div class="title-card">
+        <div class="title-card" (click)="onClickTitle('facebook')">
             <div class="title">
                 <img class="titleimg" src="../../../assets/img/Facebook.png" height="26" width="26" />
               
@@ -33,7 +47,7 @@
             </div>
         </div>
         
-        <div class="title-card">
+        <div class="title-card" (click)="onClickTitle('linkedin')">
             <div class="title">
                 <img class="titleimg" src="../../../assets/img/linkedin.png" height="26" width="26" /> 
             </div>
@@ -42,9 +56,10 @@
             </div>
         </div>
     
-        <div class="title-card">
+        <div class="title-card" >
             <div class="title">
-                <i  class="fa fa-plus plusicon" aria-hidden="true"></i>
+                <!-- <i  class="fa fa-plus plusicon" aria-hidden="true"></i> -->
+                <img class="plusicon" src="../../../assets/img/plus.svg" />
             </div>
             <div class="name">
                 <span class="">Add Shortcut</span>
