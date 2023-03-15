@@ -1,0 +1,15 @@
+
+<div class=" d-flex search-header py-4 px-4">
+    <div class="logo">
+        <img height="40" alt="Google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+    </div>
+
+    <div class="searchbar">
+        <img  class="searchicon" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Search-icon.png"/>
+         <input class="searchinput" type="text"  [(ngModel)]="searchValue" [ngModelOptions]="{ standalone: true }" title="search" placeholder="Search Google or type a URL">
+         <!-- <i class="fa fa-times fa-lg mr-1" aria-hidden="true"></i> -->
+         <img height="20" src="../../../assets/img/x.svg" />
+         <span class="vl"></span>
+         <a href="#"> <img class="voice" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice"></a>
+     </div>
+</div>
