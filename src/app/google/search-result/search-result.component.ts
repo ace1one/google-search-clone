@@ -33,13 +33,15 @@ export class SearchResultComponent implements OnInit,OnDestroy {
 
 
   searchList:any[]=[]
+  searchInfo:any;
   getSearch(){
     this.searchService.getsearchData(this.paginator)
     .pipe(takeUntil(this.destoryed$))
     .subscribe(res=>{
-      const { items }:any = res.body
+      const { items,searchInformation }:any = res.body
       console.log(res);
       this.searchList = items
+      this.searchInfo = searchInformation
      // this.goToSearchPage()
     })
   }
@@ -67,11 +69,28 @@ export class SearchResultComponent implements OnInit,OnDestroy {
      if(prop === nativeElement.className){
      
       className[0].classList.add('option')
-      console.log(className);
-      
+   
+      //svgClass. ='blue'
+    // if(className[0].className == 'option'){
+       let svgClass = document.getElementsByClassName(className[0].children[0].className[1])
+       console.log(className);
+       className[0].classList.forEach(res=>{
+        if(res === 'option'){
+          className[0].children[0].classList.add('active')
+        }else{
+          className[0].children[0].classList.remove('active')
+        }
+       })
+    // }
+   // console.log(className[0].children[0].className);
+    
+     // svgClass.
      //  this.optionlist.classList.add('option')
      }else{
+      className[0].children[0].classList.remove('active')
       className[0].classList.remove('option')
+     
+    
      }
       
     });

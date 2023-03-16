@@ -1,43 +1,134 @@
-
 <div class=" d-flex search-header py-4 px-4">
     <div class="logo">
-        <img height="40" alt="Google" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+        <img height="40" alt="Google"
+            src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
     </div>
 
     <div class="searchbar">
-        <img  class="searchicon" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Search-icon.png"/>
-         <input class="searchinput" type="text"  [(ngModel)]="searchValue" [ngModelOptions]="{ standalone: true }" title="search" placeholder="Search Google or type a URL">
-         <!-- <i class="fa fa-times fa-lg mr-1" aria-hidden="true"></i> -->
-         <img height="20" src="../../../assets/img/x.svg" />
-         <span class="vl"></span>
-         <a href="#"> <img class="voice" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice"></a>
-     </div>
+        <img class="searchicon" src="../../../assets/img/search.svg" />
+        <input class="searchinput" type="text" [(ngModel)]="searchValue" [ngModelOptions]="{ standalone: true }"
+            title="search" placeholder="Search Google or type a URL">
+        <!-- <i class="fa fa-times fa-lg mr-1" aria-hidden="true"></i> -->
+        <img height="20" src="../../../assets/img/x.svg" />
+        <span class="vl"></span>
+        <a href="#"> <img class="voice"
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png"
+                title="Search by Voice"></a>
+    </div>
 </div>
 
 <div class="topgrid">
     <ul class="options" style="list-style: none; position: relative; left: 140px;">
-        <li><a #optionlist  class="all" style="color: grey; cursor: pointer;padding: 5px;" (click)="onClickOption('all')"><img class="mr-2" src="../../../assets/img/search.svg" />All  </a></li>
-        <li><a #optionlist class="img" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('img')"><img class="mr-2" src="../../../assets/img/image-fill.svg" />Images </a></li>
-        <li><a #optionlist  class="video" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('video')"><img class="mr-2" src="../../../assets/img/file-play.svg" />Videos </a></li>
-        <li><a #optionlist class="news" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('news')"><img class="mr-2" src="../../../assets/img/newspaper.svg" />News </a></li>
-        <li><a #optionlist class="book" style="color: grey;  cursor: pointer;padding: 5px;" (click)="onClickOption('book')"><img class="mr-2" src="../../../assets/img/journal-bookmark.svg" />Books </a></li>
-
+        <li>
+            <a #optionlist class="all" style="color: grey; cursor: pointer;padding: 5px;"
+                (click)="onClickOption('all')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-search svgimg mr-2" viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg>
+                All 
+            </a>
+        </li>
+        <li>
+            <a #optionlist class="img" style="color: grey;  cursor: pointer;padding: 5px;"
+                (click)="onClickOption('img')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-image-fill svgimg mr-2" viewBox="0 0 16 16">
+                    <path
+                        d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
+                </svg>
+                Images 
+            </a>
+        </li>
+        <li>
+            <a #optionlist class="video" style="color: grey;  cursor: pointer;padding: 5px;"
+                (click)="onClickOption('video')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-file-play svgimg mr-2" viewBox="0 0 16 16">
+                    <path
+                        d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z" />
+                    <path
+                        d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
+                </svg>
+                Videos 
+            </a>
+        </li>
+        <li>
+            <a #optionlist class="news" style="color: grey;  cursor: pointer;padding: 5px;"
+                (click)="onClickOption('news')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-newspaper svgimg mr-2" viewBox="0 0 16 16">
+                    <path
+                        d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5v-11zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5H12z" />
+                    <path
+                        d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z" />
+                </svg>
+                News </a>
+        </li>
+        <li>
+            <a #optionlist class="book" style="color: grey;  cursor: pointer;padding: 5px;"
+                (click)="onClickOption('book')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-journal-bookmark svgimg mr-2" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
+                    <path
+                        d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z" />
+                    <path
+                        d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
+                </svg>
+                Books 
+            </a>
+        </li>
     </ul>
-   
+
 </div>
 <hr>
 
-
-<div class="search-box">
-    <div class="search-data" *ngFor="let lst of searchList">
-        <h3>{{ lst.title }}</h3> <title>{{ lst.link }}</title>
-        <span>{{ lst.snippet }}</span>
+<div id="searchresultsarea">
+    <p id="searchresultsnumber">About {{ searchInfo?.formattedTotalResults }} results ({{
+        searchInfo?.formattedSearchTime }}) </p>
+    <div class="searchresult" *ngFor="let lst of searchList">
+        <a href="{{lst?.link}}">
+            <h2>{{ lst?.title }}</h2>
+        </a>
+        <a href="{{lst?.link}}">{{ lst?.link }}</a> <button>▼</button> <br>
+        <span [innerHTML]="lst?.htmlSnippet"></span>
     </div>
 </div>
 
+<div class="pagination-area">
+    <div class="search-pagination-area">
+        <div class="leftarrow">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </div>
+    
+        <div class="googleimg">
+            <img width="250" height="50" src="../../../assets/img/google-pagination-logo.png" />
+        </div>
+    
+        <div class="rightarrow">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </div>
+    </div>
 
-
-
-
-      
-
+    <div class="pagination">
+        <span>Previous</span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>5</span>
+        <span>6</span>
+        <span>7</span>
+        <span>8</span>
+        <span>9</span>
+        <span>10</span>
+        <span>Next</span>
+    </div>
+</div>

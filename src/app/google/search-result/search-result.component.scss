@@ -25,7 +25,7 @@
 
 
   .searchicon{
-    height: 20px;
+   // height: 20px;
     position: relative;
     left: 10px;
   }
@@ -68,6 +68,7 @@
   border-bottom: 1px solid blue;
   border-bottom-width: 3px;
   padding: 5px;
+  color: blue !important;
 }
 
 .option-link:hover{
@@ -93,4 +94,78 @@
   left: 170px;
 
 }
+
+
+#searchresultsarea {
+  margin-left: 170px;
+  font-family: 'Arial';
+  width: 800px;
+}
+
+.searchresult {
+  margin-left: 8px;
+}
+
+#searchresultsnumber {
+  font-size: 0.8rem;
+  color: gray;
+  margin-left: 10px;
+}
+
+
+.searchresult button {
+  font-size: 10px;
+  line-height: 14px;
+  color: green;
+  margin-bottom: 0px;
+  padding: 0px;
+  border-width: 0px;
+  background-color: white;
+}
+
+.searchresult h2 {
+  font-size: 19px;
+  line-height: 18px;
+  font-weight: normal;
+  color: rgb(29, 1, 189);
+  margin-bottom: 0px;
+  margin-top: 25px;
+}
+
+.searchresult a {
+  font-size: 14px;
+  line-height: 14px;
+  color: #136e13;
+  margin-bottom: 0px;
+}
+
+.active{
+  fill: blue;
+}
+
+
+.search-pagination-area{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  margin-top: 35px;
+}
+
+.pagination{
+  margin: auto;
+  width: 50%;
+  display: flex;
+  span{
+    margin-right: 10px;
+  }
+}
+
+
+.leftarrow, .rightarrow{
+  position: relative;
+  top: 8px;
+  cursor: pointer;
+}
+
+
 
