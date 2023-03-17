@@ -5,29 +5,61 @@
     </div>
 
     <div class="searchbar">
-        <img class="searchicon" src="../../../assets/img/search.svg" />
-        <input class="searchinput" type="text" [(ngModel)]="searchValue" [ngModelOptions]="{ standalone: true }"
-            title="search" placeholder="Search Google or type a URL">
+        <!-- <img class="searchicon" src="../../../assets/img/search.svg" /> -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0087ca" class="bi bi-search searchicon"
+            viewBox="0 0 16 16">
+            <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        </svg>
+        <input #searchBarFocus id="searchinput" (keyup.enter)="onSearch()" (ngModelChange)="onChangeSearchInput()"
+            type="text" [(ngModel)]="searchValue" [ngModelOptions]="{ standalone: true }" title="search"
+            placeholder="Search Google or type a URL">
         <!-- <i class="fa fa-times fa-lg mr-1" aria-hidden="true"></i> -->
-        <img height="20" src="../../../assets/img/x.svg" />
+
+        <svg xmlns="http://www.w3.org/2000/svg" *ngIf="hasSearchValue" (click)="onClickCross()" width="25"
+            fill="#0087ca" class="bi bi-x crossicon" viewBox="0 0 16 16">
+            <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
         <span class="vl"></span>
         <a href="#"> <img class="voice"
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png"
-                title="Search by Voice"></a>
+                title="Search by Voice">
+        </a>
+        <svg class="gcamera" focusable="false" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg">
+            <rect fill="none"></rect>
+            <g>
+                <circle fill="#4285f4" cx="96" cy="104.15" r="28">
+                </circle>
+                <path fill="#ea4335"
+                    d="M160,72v40.15V136c0,1.69-0.34,3.29-0.82,4.82v0v0c-1.57,4.92-5.43,8.78-10.35,10.35h0v0 c-1.53,0.49-3.13,0.82-4.82,0.82H66l16,16h50h12c4.42,0,8.63-0.9,12.46-2.51c3.83-1.62,7.28-3.96,10.17-6.86 c1.45-1.45,2.76-3.03,3.91-4.74c2.3-3.4,3.96-7.28,4.81-11.44c0.43-2.08,0.65-4.24,0.65-6.45v-12V96.15V84l-6-19l-10.82,2.18 C159.66,68.71,160,70.31,160,72z">
+                </path>
+                <path fill="#4285f4"
+                    d="M32,72c0-1.69,0.34-3.29,0.82-4.82c1.57-4.92,5.43-8.78,10.35-10.35C44.71,56.34,46.31,56,48,56 h96c1.69,0,3.29,0.34,4.82,0.82c0,0,0,0,0,0L149,45l-17-5l-16-16h-13.44H96h-6.56H76L60,40H48c-17.67,0-32,14.33-32,32v12v20l16,16 V72z">
+                </path>
+                <path fill="#34a853"
+                    d="M144,40h-12l16.83,16.83c1.23,0.39,2.39,0.93,3.47,1.59c2.16,1.32,3.97,3.13,5.29,5.29 c0.66,1.08,1.2,2.24,1.59,3.47v0L176,84V72C176,54.33,161.67,40,144,40z">
+                </path>
+                <path fill="#fbbc05"
+                    d="M48,168h39.89l-16-16H48c-8.82,0-16-7.18-16-16v-23.89l-16-16V136C16,153.67,30.33,168,48,168z">
+
+                </path>
+            </g>
+        </svg>
     </div>
 </div>
 
 <div class="topgrid">
     <ul class="options" style="list-style: none; position: relative; left: 140px;">
         <li>
-            <a #optionlist class="all" style="color: grey; cursor: pointer;padding: 5px;"
+            <a #optionlist class="all option" style="color: grey; cursor: pointer;padding: 5px;"
                 (click)="onClickOption('all')">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-search svgimg mr-2" viewBox="0 0 16 16">
                     <path
                         d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg>
-                All 
+                All
             </a>
         </li>
         <li>
@@ -38,7 +70,7 @@
                     <path
                         d="M.002 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2V3zm1 9v1a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5l-3.777-1.947a.5.5 0 0 0-.577.093l-3.71 3.71-2.66-1.772a.5.5 0 0 0-.63.062L1.002 12zm5-6.5a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0z" />
                 </svg>
-                Images 
+                Images
             </a>
         </li>
         <li>
@@ -51,7 +83,7 @@
                     <path
                         d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z" />
                 </svg>
-                Videos 
+                Videos
             </a>
         </li>
         <li>
@@ -78,7 +110,7 @@
                     <path
                         d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z" />
                 </svg>
-                Books 
+                Books
             </a>
         </li>
     </ul>
@@ -86,49 +118,73 @@
 </div>
 <hr>
 
-<div id="searchresultsarea">
+<div id="searchresultsarea" >
     <p id="searchresultsnumber">About {{ searchInfo?.formattedTotalResults }} results ({{
         searchInfo?.formattedSearchTime }}) </p>
-    <div class="searchresult" *ngFor="let lst of searchList">
-        <a href="{{lst?.link}}">
-            <h2>{{ lst?.title }}</h2>
-        </a>
-        <a href="{{lst?.link}}">{{ lst?.link }}</a> <button>▼</button> <br>
-        <span [innerHTML]="lst?.htmlSnippet"></span>
+    <div  *ngIf="activeSearchTab === 'all';else imgSearch">
+        <div class="searchresult" *ngFor="let lst of searchList">
+            <a href="{{lst?.link}}">
+                <h2>{{ lst?.title }}</h2>
+            </a>
+            <a href="{{lst?.link}}">{{ lst?.link }}</a> <button>▼</button> <br>
+            <span [innerHTML]="lst?.htmlSnippet"></span>
+        </div>
     </div>
+
+<ng-template #imgSearch>
+    <app-search-result-img
+       [searchImgList]="searchImgList"
+    ></app-search-result-img>
+</ng-template>
+
 </div>
+
+
 
 <div class="pagination-area">
     <div class="search-pagination-area">
-        <div class="leftarrow">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+        <div class="leftarrow" *ngIf="hasPrevious" (click)="onClickPaginationPrevNext('previous')">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                stroke-linejoin="round" class="cursor-pointer" height="20" width="20"
+                xmlns="http://www.w3.org/2000/svg">
                 <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
         </div>
-    
+
         <div class="googleimg">
             <img width="250" height="50" src="../../../assets/img/google-pagination-logo.png" />
         </div>
-    
-        <div class="rightarrow">
-            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" class="cursor-pointer" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
+
+        <div class="rightarrow" *ngIf="hasNext" (click)="onClickPaginationPrevNext('next')">
+            <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round"
+                stroke-linejoin="round" class="cursor-pointer" height="20" width="20"
+                xmlns="http://www.w3.org/2000/svg">
                 <polyline points="9 18 15 12 9 6"></polyline>
             </svg>
         </div>
     </div>
 
     <div class="pagination">
-        <span>Previous</span>
-        <span>1</span>
-        <span>2</span>
-        <span>3</span>
-        <span>4</span>
-        <span>5</span>
-        <span>6</span>
-        <span>7</span>
-        <span>8</span>
-        <span>9</span>
-        <span>10</span>
-        <span>Next</span>
+        <span class="pagination-number" *ngIf="hasPrevious"
+            (click)="onClickPaginationPrevNext('previous')">Previous</span>
+        <span [ngClass]="p.isActive ? 'current-page' : ''" class="pagination-number" *ngFor="let p of pagination"
+            (click)="onClickPagination(p.number)">{{ p.number }}</span>
+
+        <span class="pagination-number" *ngIf="hasNext" (click)="onClickPaginationPrevNext('next')">Next</span>
     </div>
+</div>
+
+
+<div id="footer">
+    <div id="footerlocation">
+        <p>Kathmandu </p>
+        <p> - From your phone (Location History) - Use precise location - Learn more</p>
+    </div>
+    <hr>
+    <ul id="footermenu">
+        <li>Help</li>
+        <li>Send feedback</li>
+        <li>Privacy</li>
+        <li>Terms</li>
+    </ul>
 </div>

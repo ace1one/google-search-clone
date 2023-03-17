@@ -22,6 +22,12 @@ export class GoogleSearchService {
     if(param.searchParam.q) {
       params = params.append('q', param.searchParam.q);
     }
+    if(param.searchParam.start) {
+      params = params.append('start', param.searchParam.start);
+    }
+    if(param.searchParam.searchType) {
+      params = params.append('searchType', param.searchParam.searchType);
+    }
     return this.http.get<any>(this.API_URL, {params, observe: 'response'});
   }
 }

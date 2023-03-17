@@ -2,12 +2,12 @@
 
 .searchbar{
     margin-left: 40px;
-    width: 615px;
+    width: 640px;
     border-radius: 30px;
     border: 1px solid #dcdcdc;
 }
 
-.searchinput{
+#searchinput{
     border: none;
     width: 515px;
     margin-left: 20px;
@@ -21,13 +21,26 @@
     position: relative;
     height: 20px;
     left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
   }
 
-
+.gcamera{
+  height: 20px;
+  width: 40px;
+  cursor: pointer;
+}
   .searchicon{
    // height: 20px;
     position: relative;
     left: 10px;
+    cursor: pointer;
+  }
+
+  .crossicon{
+    position: relative;
+   // height: 10px;
+   cursor: pointer;
   }
 
 
@@ -164,7 +177,79 @@
 .leftarrow, .rightarrow{
   position: relative;
   top: 8px;
+  color: #0087ca;
   cursor: pointer;
+}
+
+
+.pagination-number {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+  cursor: pointer;
+}
+
+.current-page{
+  color: black;
+}
+
+.pagination-number:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.pagination-number:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+
+#footer {
+  background-color: rgb(238, 238, 238);
+  position: relative;
+  left: 0px;
+  top:25px;
+  bottom: 0px;
+  width: 100%;
+  font-size: 14px;
+  font-family: 'arial';
+  color: rgb(85, 85, 85);
+}
+
+#footermenu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  margin-left: 135px;
+  margin-bottom: 0px;
+  padding-bottom: 10px;
+}
+
+#footermenu li {
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+#footerlocation {
+  display: flex;
+  direction: row;
+  margin-left: 175px;
+  position: relative;
+  top: 15px;
+  cursor: pointer;
+}
+
+#footerlocation p:nth-of-type(1) {
+  font-weight: bold;
 }
 
 

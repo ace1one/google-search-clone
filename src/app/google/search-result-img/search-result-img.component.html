@@ -1,0 +1,8 @@
+<div class="image-container" *ngFor="let imgData of searchImgList">
+    <div class="image-data">
+       <div class="image-card">
+        <img class="search-img"  [src]="imgData.link"/>
+       </div>
+       {{ imgData.title}}
+    </div>
+</div>
