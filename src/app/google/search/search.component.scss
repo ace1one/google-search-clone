@@ -1,16 +1,17 @@
-// .logo{
-//     margin: 50px 20px 0px 500px;
-// }
 
-.logo{
-    margin: 150px 0px 25px 500px;
-  }
+  .body-container{
+margin-top: 100px;
+
+  }  
+
+  
 
 
   .searchbar{
-    margin: auto;
-    margin-left: 355px;
-    width: 595px;
+    // margin: auto;
+    // margin-left: 355px;
+   // width: 595px;
+    height: 40px;
     border-radius: 30px;
     border: 1px solid #dcdcdc;
   }
@@ -23,26 +24,40 @@
     outline:none;
   }
   .searchinput{
+    position: absolute;
     border: none;
-    width: 515px;
-    margin-left: 20px;
-    height: 40px;
-    font-size: 16px;
+   // width: 515px;
+  // max-width: 500px;
+   // min-width: auto;
+    margin-left: 5px;
+   // height: 40px;
+    font-size: 14px;
     outline: none;
+    height: -webkit-fill-available;
+  }
+
+  @media (min-width:768px) {
+    .searchinput{
+      font-size: 16px;
+    }
+   
   }
 
 
   .voice{
-    position: relative;
+    position: absolute;
     height: 20px;
-    left: 5px;
+    /* left: 5px; */
+    right: 10px;
+    top: 8px;
   }
 
 
   .searchicon{
    // height: 20px;
     position: relative;
-    left: 10px;
+    top: 6px;
+    fill: rgb(95,99,104);
   }
 
   .title{
@@ -53,7 +68,8 @@
     height: 45px;
     background-color: rgba(241, 243, 244, 1);
     margin-top: 10px;
-    margin-left: 35px;
+    position: relative;
+    left: 15px;
 
   }
 
@@ -69,9 +85,12 @@
     display: flex;
    // padding: 2px 8px;
     height: 32px;
-    margin-left: 35px;
+   // margin-left: 35px;
     padding-top: 8px;
     font-size: small;
+    position: relative;
+    left: 15px;
+    
 
   }
 
@@ -92,6 +111,7 @@
    cursor: pointer;
     height: 95px;
     width: 120px;
+    max-width: 80px;
     border: 1px solid white;
   }
 
@@ -125,12 +145,12 @@
   }
 
   .top-bar{
-    align-items: center;
-    display: flex;
-    padding-left: 16px;
-    position: relative;
-    float: right;
-    margin-right: 25px;
+   // align-items: center;
+   // display: flex;
+   // padding-left: 16px;
+   // position: relative;
+  //  float: right;
+   // margin-right: 25px;
     color: gray;
     //cursor: pointer;
   }
