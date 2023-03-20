@@ -1,70 +1,120 @@
+// .searchbar{
+//     margin-left: 40px;
+//     width: 640px;
+//     border-radius: 30px;
+//     border: 1px solid #dcdcdc;
+// }
 
-
-.searchbar{
-    margin-left: 40px;
-    width: 640px;
-    border-radius: 30px;
-    border: 1px solid #dcdcdc;
+// #searchinput{
+//     border: none;
+//     width: 515px;
+//     margin-left: 20px;
+//     height: 40px;
+//     font-size: 16px;
+//     outline: none;
+//   }
+.searchbar {
+  // margin: auto;
+  // margin-left: 355px;
+  // width: 595px;
+  height: 40px;
+  border-radius: 30px;
+  max-width: 800px;
+  border: 1px solid #dcdcdc;
 }
 
-#searchinput{
-    border: none;
-    width: 515px;
-    margin-left: 20px;
-    height: 40px;
+.searchbar:hover {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+}
+
+.searchbar:focus-within {
+  box-shadow: 1px 1px 8px 1px #dcdcdc;
+  outline: none;
+}
+
+#searchinput {
+  position: absolute;
+  border: none;
+  // width: 515px;
+  // max-width: 500px;
+  // min-width: auto;
+  margin-left: 5px;
+  // height: 40px;
+  font-size: 14px;
+  outline: none;
+  height: -webkit-fill-available;
+}
+
+@media (min-width:768px) {
+  .searchinput {
     font-size: 16px;
-    outline: none;
   }
 
+}
 
-.voice{
-    position: relative;
-    height: 20px;
-    left: 5px;
-    margin-right: 5px;
-    cursor: pointer;
-  }
 
-.gcamera{
+.voice {
+  position: absolute;
   height: 20px;
-  width: 40px;
+  /* left: 5px; */
+  right: 45px;
+  top: 8px;
   cursor: pointer;
 }
-  .searchicon{
-   // height: 20px;
-    position: relative;
-    left: 10px;
-    cursor: pointer;
-  }
-
-  .crossicon{
-    position: relative;
-   // height: 10px;
-   cursor: pointer;
-  }
 
 
-  .vl {
-    position: relative;
-    border-left: 1px solid #dcdcdc;
-    height: 30px;
-  }
+.searchicon {
+  // height: 20px;
+  position: relative;
+  top: 6px;
+  fill: rgb(95, 99, 104);
+}
 
-  li {
-    display: inline;
-    margin-right: 25px;
+.gcamera {
+  position: absolute;
+  height: 20px;
+  width: 40px;
+  right: 1px;
+  top: 8px;
+  cursor: pointer;
+}
+
+
+
+
+.crossicon {
+  position: absolute;
+  height: 20px;
+  /* left: 5px; */
+  right: 80px;
+  top: 8px;
+  cursor: pointer;
+}
+
+
+.vl {
+  position: absolute;
+  border-left: 1px solid #dcdcdc;
+  height: 30px;
+  right: 75px;
+  top: 5px;
+}
+
+li {
+  display: inline;
+  margin-right: 25px;
 }
 
 .topgrid {
   position: relative;
   top: 10px;
- // display: grid;
+  // display: grid;
   grid-template-rows: repeat(2 60px);
-  grid-template-columns: repeat(4); 
+  grid-template-columns: repeat(4);
   align-items: center;
-  grid-template-areas: 
-  "logo form apps signin"
-  ". options . .";
+  grid-template-areas:
+    "logo form apps signin"
+    ". options . .";
 }
 
 .options {
@@ -73,18 +123,18 @@
   color: grey;
 }
 
-.option-link{
+.option-link {
   padding: 5px;
 }
 
-.option{
+.option {
   border-bottom: 1px solid blue;
   border-bottom-width: 3px;
   padding: 5px;
   color: blue !important;
 }
 
-.option-link:hover{
+.option-link:hover {
   border-bottom: 1px solid blue;
   border-bottom-width: 3px;
   padding: 5px;
@@ -93,7 +143,7 @@
 
 .hrz {
   height: .25rem;
-  width:auto;
+  width: auto;
   margin: 0;
   background: tomato;
   border: none;
@@ -102,7 +152,7 @@
 }
 
 
-.search-box{
+.search-box {
   position: relative;
   left: 170px;
 
@@ -115,7 +165,7 @@
   width: 800px;
 }
 
-#searchimgresultsarea{
+#searchimgresultsarea {
   margin-left: 170px;
   font-family: 'Arial';
 }
@@ -157,29 +207,36 @@
   margin-bottom: 0px;
 }
 
-.active{
+.active {
   fill: blue;
 }
 
+.pagination-area {
+  max-width: 525px;
+  margin-left: 100px;
+}
 
-.search-pagination-area{
+
+.search-pagination-area {
   margin: auto;
   width: 50%;
   display: flex;
   margin-top: 35px;
 }
 
-.pagination{
+.pagination {
   margin: auto;
   width: 50%;
   display: flex;
-  span{
+
+  span {
     margin-right: 10px;
   }
 }
 
 
-.leftarrow, .rightarrow{
+.leftarrow,
+.rightarrow {
   position: relative;
   top: 8px;
   color: #0087ca;
@@ -194,7 +251,7 @@
   cursor: pointer;
 }
 
-.current-page{
+.current-page {
   color: black;
 }
 
@@ -221,7 +278,7 @@
   background-color: rgb(238, 238, 238);
   position: relative;
   left: 0px;
-  top:25px;
+  top: 25px;
   bottom: 0px;
   width: 100%;
   font-size: 14px;
@@ -258,7 +315,7 @@
 }
 
 
-.menus{
+.menus {
   align-items: center;
   display: flex;
   padding-left: 16px;
@@ -271,6 +328,3 @@
   fill: gray;
   cursor: pointer;
 }
-
-
-

@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit,OnDestroy {
-  paginator:any ={ searchParam :{q:null }}
+export class SearchComponent implements OnInit, OnDestroy {
+  paginator: any = { searchParam: { q: null } }
   destoryed$ = new Subject<any>();
-  searchValue:any = null
-  constructor(private searchService:GoogleSearchService,private router:Router) { }
+  searchValue: any = null
+  constructor(private searchService: GoogleSearchService, private router: Router) { }
 
   ngOnInit(): void {
     //this.getSearch()
@@ -24,21 +24,21 @@ export class SearchComponent implements OnInit,OnDestroy {
   //   this.goToSearchPage()
   // }
 
-  goToSearchPage(){
-    this.router.navigateByUrl(`/search?q=${this.searchValue}`),{
-      queryParams:{
+  goToSearchPage() {
+    this.router.navigateByUrl(`/search?q=${this.searchValue}`), {
+      queryParams: {
         myParam: this.searchValue
       }
     }
   }
 
 
-  showResult:boolean = false;
-  onSearch(){
+  showResult: boolean = false;
+  onSearch() {
     this.goToSearchPage()
   }
 
-  onClickTitle(titleName:string){
+  onClickTitle(titleName: string) {
     //this.router.navigate(`wwww.${titleName}.com`)
     window.location.href = `http://${titleName}.com`;
   }
